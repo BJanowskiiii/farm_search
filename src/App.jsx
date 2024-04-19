@@ -1,11 +1,8 @@
 import './App.css';
 import {useEffect, useState} from "react";
 
-
-
 function App() {
     const [animals, setAnimals] = useState([]);
-
 
     useEffect(() => {
         const lastQuery = localStorage.getItem('last_query');
@@ -21,36 +18,36 @@ function App() {
         localStorage.setItem('lastQuery', q)
     }
 
-
     return (
-        <main>
+        <main style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <h1>Animal Farm</h1>
             <input
                 type='text'
                 placeholder='search'
                 onChange={(e)=>search(e.target.value)}
+                style={{ textAlign: 'center' }}
             />
 
-            <ul>
+            <ul style={{ listStyleType: 'none', padding: 0 }}>
                 {animals.map((animal)=>(
                     <Animal key={animal.id}  {...animal} />
                 ))}
-                {animals.length === 0 && 'no animal found'}
+                {animals.length === 0 && 'No animal found, please type another letter to search animal :)'}
             </ul>
         </main>
     );
 }
 
+// eslint-disable-next-line react/prop-types
 function Animal({type, age, name}){
     return (
-        <li style={{ marginBottom: '5px' }}>
+        <li style={{ marginBottom: '5px', textAlign: 'center' }}>
             <strong>{type}</strong>{name} ({age} years old)
         </li>
     )
 }
 
 export default App;
-
 
 
 
