@@ -1,8 +1,7 @@
-# React + Vite
+*Animal Farm Search is a full-stack application built using Vite, React, and Express. It serves as an example of a client-side web application.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+*The application allows users to search for various animals. The search is conducted in real-time, and the results are instantly displayed to the user.
 
-Currently, two official plugins are available:
+*For building the frontend, I used React with Vite, instead of the traditional command: npx create-react-app, thereby reducing the package size.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+*The Express.js server serves as the backend of our application, providing an API endpoint that returns data about the animals. CORS is used as middleware in Express to avoid CORS origin request issues
